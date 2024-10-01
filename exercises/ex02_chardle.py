@@ -8,7 +8,7 @@ def input_word() -> str:
     user_word: str = str(input("Enter a 5-character word: "))  # initial prompt proposed
 
     if len(user_word) != 5:  # error if length doesnt equal 5
-        print("Error: Word must contain 5-characters.")
+        print("Error: Word must contain 5 characters.")
         exit()  # exits function early to not confuse user (before return function)
     return user_word
 
