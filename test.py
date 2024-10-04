@@ -1,2 +1,6 @@
-game_points: list[int] = [102, 102, 94]
-print(game_points)
+x: list[float] = [1.0, 2.0]
+y: list[float] = [3.0, 4.0]
+y = x
+x[0] = 3.0
+
+print(y)
