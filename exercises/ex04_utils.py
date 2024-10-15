@@ -5,6 +5,9 @@ __author__ = "730739772"
 
 def all(a: list[int], value: int) -> bool:
     """Checks to see if all the items in the list are equal to value"""
+    if len(a) == 0:
+        return False  # fix after autograder, if list is empty, false immediately
+
     index = 0
     while index < len(a):
         if a[index] != value:  # check if item in list != value
@@ -46,8 +49,9 @@ def is_equal(list_a: list[int], list_b: list[int]) -> bool:
 
 
 def extend(list_1: list[int], list_2: list[int]) -> None:
+    """Appends list 2 to the end of list 1"""
     index = 0
 
-    while index < len(list_2):
-        list_1.append(list_2[index])
+    while index < len(list_2):  # loop to append for each item in list 2
+        list_1.append(list_2[index])  # appends to the end of list 1
         index += 1
