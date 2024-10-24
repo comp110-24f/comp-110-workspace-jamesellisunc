@@ -15,7 +15,7 @@ def test_find_and_remove_max_expected_value() -> None:
 
 def test_find_and_remove_max_mutation() -> None:
     """Should mutate list by removing all instances of max val"""
-    trial_lst: list[int] = [11, 7, 4, 3, 11]
+    trial_lst: list[int] = [11, 11, 7, 4, 3]
     find_and_remove_max(trial_lst)
     # mutate the list by popping all instances largest value
     assert trial_lst == [7, 4, 3]  # expected outcome

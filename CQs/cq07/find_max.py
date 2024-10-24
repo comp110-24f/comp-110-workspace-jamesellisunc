@@ -18,6 +18,9 @@ def find_and_remove_max(input: list[int]) -> int:
     while index < len(input):
         if input[index] == largest_num:
             input.pop(index)  # removes all instances of largest number
-        index += 1
+        else:
+            index += 1
+            # after autograder: only increment when if is false
+            # (this caused the list to skip index 0 after mutation)
 
     return largest_num
