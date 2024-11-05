@@ -18,6 +18,11 @@ def invert(input_dict: dict[str, str]) -> dict[str, str]:
 
 def favorite_color(fav_colors: dict[str, str]) -> str:
     """Finds the most common value in a dictionary"""
+
+    if len(fav_colors) == 0:
+        # autograder, incase of empty dict input (shouldve known by unit test)
+        return ""
+
     color_count: dict[str, int] = {}  # initialize an empty dict
 
     for key in fav_colors:
@@ -72,4 +77,6 @@ def update_attendance(
     if day not in attend_log:  # conditional to test if day isnt a key yet
         attend_log[day] = []  # initialize empty list
 
-    attend_log[day].append(student_name)  # append value from dict to list
+    if student_name not in attend_log[day]:
+        # autograder, must make sure to not repeat names
+        attend_log[day].append(student_name)  # append value from dict to list
