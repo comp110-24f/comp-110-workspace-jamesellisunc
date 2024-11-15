@@ -1,38 +1,16 @@
-def odd_and_even(input: list[int]) -> list[int]:
-    """Returns elements of input that are odd and have an even index"""
-    new_list: list[int] = []
+def free_biscuits(input_dict: dict[str, list[int]]) -> dict[str, bool]:
+    scores: dict[str, bool] = {}
 
-    for idx in range(0, len(input)):
-        if input[idx] % 2 == 1 and idx % 2 == 0:
-            new_list.append(input[idx])
+    for keys in input_dict:
+        points: list[int] = input_dict[keys]
 
-    return new_list
+        sum: int = 0
+        for elem in points:
+            sum += elem
 
-
-def short_words(input: list[str]) -> list[str]:
-    """Returns list of words that are shorter than 5 characters"""
-    new_list: list[str] = []
-
-    for elem in input:
-        if len(elem) < 5:
-            new_list.append(elem)
+        if sum >= 100:
+            scores[keys] = True
         else:
-            print(f"{elem} is too long!")
-    return new_list
+            scores[keys] = False
 
-
-def value_exits(input_dict: dict[str, int], val: int) -> bool:
-    """Evaluates if a given value exists in a dict"""
-    for key in input_dict:
-        if input_dict[key] == val:
-            return True
-    return False
-
-
-def pls_or_minus_n(inp: dict[str, int], n: int) -> None:
-    """Checks if each val in a dict is even or odd"""
-    for key in inp:
-        if inp[key] % 2 == 0:
-            inp[key] += n
-        else:
-            inp[key] -= n
+    return scores

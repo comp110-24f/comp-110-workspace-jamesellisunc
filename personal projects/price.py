@@ -58,14 +58,18 @@ print(f"The price of {card_name} is: {price}")
 
 
 def get_multiple_prices(card_names: list[str]) -> dict[str, float]:
-    prices = {}
+    prices = {}  # instantiate an empty dict
     for card_name in card_names:
         price = get_card_price(card_name)
         prices[card_name] = price
 
     total: float = 0.0
     for key in prices:
-        total += prices[key]
+        single_price = float(prices[key])
+        total += single_price
 
-    print(total)
+    print(f"Your collection with worth ${total}!")
     return prices
+
+
+# card_names: list[str] = ["The One Ring", "Mox Opal", "Sol Ring"]
